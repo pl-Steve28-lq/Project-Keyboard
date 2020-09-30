@@ -21,7 +21,11 @@ Support Overlay. Even if you open new window, it always not obscured by any wind
 어느 키를 치면 그 키의 스탯이 1 증가합니다. 키 배치, 종료를 바꿀 수도 있습니다. \*.pkvstat 형식으로 저장하고 불러올 수 있습니다. <br>
 If you press a key, Stat of the key increased by 1. You can rearrange or change keys. Save and load Stats, using \*.pkvstat format.
 
-> **키 바꾸기 Change Key (미완성 Incomplete) : Button Click**<br>
+> **합산 기능 Total Function : Default** <br>
+스탯을 모두 합산한 토탈 값을 보여줍니다.<br>
+Visualize sum of your stats.
+
+> **키 바꾸기 Change Key : Button Click**<br>
 최초 프로그램 실행 시 키 정보는 SDFJKL 입니다. 키 종류를 바꿀 수 있습니다.<br>
 If you install and execute the Program first, Key info is SDFJKL. You can change the Key infos.
 
