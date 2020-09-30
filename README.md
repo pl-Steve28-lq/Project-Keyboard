@@ -1,4 +1,5 @@
-# Project Keyboard - Key Viewer with Python
+![banner](https://user-images.githubusercontent.com/64412954/94649344-6f43e980-032f-11eb-871c-77359141f6d9.png)
+# Project Keyboard - Key Viewer with Python 3
 PyKeyViewer by Steve28 <br>
 Version : 1.0 <br><br>
 
