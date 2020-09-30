@@ -17,9 +17,9 @@ Detect Keyboard Input Anywhere by using Global Hook.
 오버레이를 지원합니다. 다른 창을 열어도, 항상 모든 창 위에 있어 가려지지 않습니다.<br>
 Support Overlay. Even if you open new window, it always not obscured by any window.
 
-> **스탯 세이브 로드 Save and Load Stats : Ctrl+C (Load), Ctrl+S (Save)**<br>
-어느 키를 치면 그 키의 스탯이 1 증가합니다. 스탯을 .pkvstat 형식으로 저장하고 불러올 수 있습니다.<br>
-If you press a key, Stat of the key increased by 1. You can save and load Stats, using format .pkvstat.
+> **키 정보 세이브 로드 Save and Load of Key Info : Ctrl+C (Load), Ctrl+S (Save)**<br>
+어느 키를 치면 그 키의 스탯이 1 증가합니다. 키 배치, 종료를 바꿀 수도 있습니다. \*.pkvstat 형식으로 저장하고 불러올 수 있습니다. <br>
+If you press a key, Stat of the key increased by 1. You can rearrange or change keys. Save and load Stats, using \*.pkvstat format.
 
 > **키 바꾸기 Change Key (미완성 Incomplete) : Button Click**<br>
 최초 프로그램 실행 시 키 정보는 SDFJKL 입니다. 키 종류를 바꿀 수 있습니다.<br>
@@ -36,6 +36,7 @@ Exit the Program.
 ============================================================================
 
 ## 추가할 기능 Features to Add
-> **키 정보 세이브 로드 Save and Load Key info** : <br>
+> ~~**키 정보 세이브 로드 Save and Load Key info** : <br>
 설정한 키 정보를 저장하고 불러올 수 있습니다.<br>
-You can save and load your key infos.
+You can save and load your key infos.~~
+(Merged with **Save and Load of Key Info**)
