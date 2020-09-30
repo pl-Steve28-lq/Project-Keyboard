@@ -4,7 +4,9 @@ from tkinter import messagebox
 from tkinter import filedialog
 import tkinter.font as Font
 from Utils.winoverlay import Window
-import sys, os, time, base64, json
+import sys, os, time, base64, json, pyglet
+
+pyglet.font.add_file('./Utils/NanumSquare_acB.ttf')
 
 VERSION = '1.0'
 WIDTH = 400
