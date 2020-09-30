@@ -162,4 +162,3 @@ test.bind('<Control-s>', save)
 with Listener(on_press=Press, on_release=Release) as l:
     Window.launch()
     l.join()
-    h.join()
