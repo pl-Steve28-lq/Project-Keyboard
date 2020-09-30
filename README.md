@@ -21,7 +21,7 @@ Support Overlay. Even if you open new window, it always not obscured by any wind
 If you press a key, Stat of the key increased by 1. You can save and load Stats, using format .pkvstat.<br><br>
 
 > **키 바꾸기 Change Key**? (미완성 Incomplete) : <br>
-최초 프로그램 실행 시 키 정보는 SDFJKL 입니다. 키 종류를 바꿀 수 있습니다.
+최초 프로그램 실행 시 키 정보는 SDFJKL 입니다. 키 종류를 바꿀 수 있습니다.<br>
 If you install and execute the Program first, Key info is SDFJKL. You can change the Key infos.<br>
 
 ============================================================================
