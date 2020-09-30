@@ -1,10 +1,10 @@
-from pynput.keyboard import Listener, Key, GlobalHotKeys
+from pynput.keyboard import Listener, Key
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
 import tkinter.font as Font
 from Utils.winoverlay import Window
-import sys, os, time, base64, json, pyglet
+import sys, os, time, json, pyglet
 
 pyglet.font.add_file('./Utils/NanumSquare_acB.ttf')
 
