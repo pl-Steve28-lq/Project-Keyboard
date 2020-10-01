@@ -72,7 +72,7 @@ def corner(event):
 def keychange(idx, new):
     def asdf():
         KEY[idx] = new
-        STATS[new] = 0
+        if not new in STATS.keys(): STATS[new] = 0
         isPress[new] = False
         exec('btn{}.configure(text=new.upper())'.format(idx))
         exec('lbl{}.configure(text=STATS[new])'.format(idx))
@@ -84,6 +84,7 @@ def keyCancel():
     keychoose.hide()
     window.show()
     isChoose = False
+    updatetotal()
 
 #Key Change OK
 def keyOK():
@@ -158,12 +159,17 @@ def update(idx):
 
 #Total Update Function
 def updatetotal():
-    d= 8
-    total.configure(text="Total : {}".format(sum(STATS.values())))
+    global STATS, KEY
+    d = 8
+    ToT = 0
+    for i in KEY:
+        ToT += STATS[i]
+    total.configure(text="Total : {}".format(ToT))
     total.place(x=145+9*d-d*len(total.cget("text")))
 
 #Stat Saving Function
 def save(event):
+    global STATS
     savedir = filedialog.asksaveasfilename(initialdir="/", title=title, filetypes=(('PKV files', '*.pkvstat'),('all files', '*.*')))
     newdir = savedir + '.pkvstat'
     if savedir != "":
