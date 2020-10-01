@@ -3,13 +3,13 @@
 PyKeyViewer by Steve28 <br>
 Version : 1.0 <br><br>
 
-Version 1.0 : 2020.9/29 ~ 2020.10/1 [Download](https://github.com/pl-Steve28-lq/ProgrammingLanguages/files/5309271/PKV_1.0.zip) <br><br>
+Version 1.0 : 2020.9/29 ~ 2020.10/1 [Download](https://github.com/pl-Steve28-lq/Project-Keyboard/files/5309937/PKV_1.0.zip) <br><br>
 
 Inspired from : [RoanH/KeysPerSecond](https://github.com/RoanH/KeysPerSecond), Key Viewer made with Java <br>
 Overlay Technologies : [davidmaamoaix/Overlay](https://github.com/davidmaamoaix/Overlay), Extend of tkinter with Overlay Method<br>
 
 ## 다운로드 Download
-> **최신 버전 Newest Version : 1.0 ([Download](https://github.com/pl-Steve28-lq/ProgrammingLanguages/files/5309271/PKV_1.0.zip))**<br>
+> **최신 버전 Newest Version : 1.0 ([Download](https://github.com/pl-Steve28-lq/Project-Keyboard/files/5309937/PKV_1.0.zip))**<br>
 1. 다운로드를 한 뒤 압축을 해제 합니다. Download the file, and unzip it.<br>
 2. 안에 있는 Project_Keyboard.exe의 바로가기를 만듭니다.<br>
 바로가기를 만드는 이유는 exe 파일이 Utils 파일을 상대적으로 읽기 때문에 두 파일의 위치가 다르면 실행이 불가하기 때문입니다.<br>
