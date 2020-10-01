@@ -6,8 +6,10 @@ import tkinter.font as Font
 from Utils.winoverlay import Window
 import sys, os, time, base64, json, pyglet, base64
 
+#Import Font
 pyglet.font.add_file('./Utils/NanumSquare_acB.ttf')
 
+#Setup Constants
 VERSION = '1.0'
 WIDTH = 400
 HEIGHT = 170
@@ -28,7 +30,7 @@ btnplace = [10, 70, 130, WIDTH-btnW-130, WIDTH-btnW-70, WIDTH-btnW-10]
 isChoose = False
 keychindex = 0
 
-
+#Setup WIndows
 window = Window(size=(WIDTH, HEIGHT))
 test = window.root
 keychoose = Window(size=(200,200))
@@ -43,13 +45,14 @@ window.position = (0, screen_height-HEIGHT)
 keychoose.position = window.position
 
 
+#Exit Function
 def exiter(event):
     isexit = messagebox.askokcancel(title, 'Quit? \n종료하시겠습니까?')
     if isexit:
         test.destroy()
         sys.exit()
 
-
+#Corner Move Function
 def corner(event):
     W, H = screen_width, screen_height
     w, h = window.position
@@ -65,6 +68,7 @@ def corner(event):
 
         test.geometry('+{}+{}'.format(res[0], res[1]))
 
+#Key Changing Function
 def keychange(idx, new):
     def asdf():
         KEY[idx] = new
@@ -73,24 +77,15 @@ def keychange(idx, new):
         exec('btn{}.configure(text=new.upper())'.format(idx))
         exec('lbl{}.configure(text=STATS[new])'.format(idx))
     return asdf
-    
 
-'''
-def btns(name, ind):
-    print('btn{} = Button(test, text="{}", bg=BG, fg=dcy, font=bigFONT, relief="flat")'.format(name, name.upper()))
-    print('btn{}.place(x=btnplace[{}], y=20, width=btnW, height=btnH)'.format(name, ind))
-
-def lbls(name, ind):
-    print('lbl{} = Label(test, text="{}", bg=BG, fg=dcy, font=bigFONT, relief="flat")'.format(name, 0))
-    print('lbl{}.place(x=btnplace[{}], y=90, width=btnW, height=btnH)'.format(name, ind))
-'''
-
+#Key Change Cancel
 def keyCancel():
     global isChoose
     keychoose.hide()
     window.show()
     isChoose = False
 
+#Key Change OK
 def keyOK():
     global keychindex
     A = keych.cget('text')
@@ -101,6 +96,7 @@ def keyOK():
         keychange(keychindex, A.lower())()
         keyCancel()
 
+#Ask Key Change
 def keyask(ind):
     def qwer():
         global isChoose, keychindex
@@ -111,6 +107,7 @@ def keyask(ind):
         isChoose = True
     return qwer
 
+#Setup Key Change Window
 choose = Label(asdf, text="키를 입력하세요!", font=bigFONT, bg=BG, fg=dcy)
 enchoose = Label(asdf, text="Input a Key!", font=bigFONT, bg=BG, fg=dcy)
 keych = Label(asdf, text="?", font=verybigFONT, bg=BG, fg=cfb)
@@ -122,6 +119,7 @@ keych.pack()
 ok.place(x=20, y=135, width=70, height=50)
 No.place(x=110, y=135, width=70, height=50)
 
+#Setup Main Window
 btn0 = Button(test, text="S", bg=BG, fg=dcy, font=bigFONT, relief="flat", command=keyask(0))
 btn1 = Button(test, text="D", bg=BG, fg=dcy, font=bigFONT, relief="flat", command=keyask(1))
 btn2 = Button(test, text="F", bg=BG, fg=dcy, font=bigFONT, relief="flat", command=keyask(2))
@@ -151,16 +149,20 @@ lbl2.place(x=btnplace[2], y=80, width=btnW, height=btnH)
 lbl3.place(x=btnplace[3], y=80, width=btnW, height=btnH)
 lbl4.place(x=btnplace[4], y=80, width=btnW, height=btnH)
 lbl5.place(x=btnplace[5], y=80, width=btnW, height=btnH)
+
 total.place(x=145, y=120)
 
+#Stat Update Function
 def update(idx):
     exec('lbl{}.configure(text=STATS["{}"])'.format(idx, KEY[idx]))
 
+#Total Update Function
 def updatetotal():
     d= 8
     total.configure(text="Total : {}".format(sum(STATS.values())))
     total.place(x=145+9*d-d*len(total.cget("text")))
 
+#Stat Saving Function
 def save(event):
     savedir = filedialog.asksaveasfilename(initialdir="/", title=title, filetypes=(('PKV files', '*.pkvstat'),('all files', '*.*')))
     newdir = savedir + '.pkvstat'
@@ -172,8 +174,8 @@ def save(event):
             messagebox.showinfo(title, "Stats saved Successful. \n정보가 성공적으로 저장되었습니다.")
         else:
             messagebox.showerror(title, "An Error occured while saving Stats. \n정보를 저장하는 중 오류가 발생하였습니다.")
-    updatetotal()
 
+#Stat Loading Function
 def load(event):
     global STATS
     savedir = filedialog.askopenfilename(initialdir="/", title=title, filetypes=(('PKV files', '*.pkvstat'),('all files', '*.*')))
@@ -184,10 +186,12 @@ def load(event):
             STATS = json.loads(info[1].replace('\'', '"'))
             for idx in range(len(KEY)):
                 update(idx)
+            updatetotal()
         messagebox.showinfo(title, "Stats loaded Successful. \n스탯이 성공적으로 로드되었습니다.")
     else:
         messagebox.showerror(title, "An Error occured while loading Stats. \n스탯을 불러오는 중 오류가 발생하였습니다.")
 
+#Key Hooking Function
 def Press( key ):
     global isPress, isChoose
     try: K = key.char
@@ -202,7 +206,6 @@ def Press( key ):
     if isChoose:
         keych.configure(text=K.upper())
 
-
 def Release( key ):
     global isPress
     try: K = key.char
@@ -212,13 +215,13 @@ def Release( key ):
         exec('btn{}.configure(bg="{}", fg="{}")'.format(W, BG, dcy))
         isPress[K] = False
 
-
+#Window Function Bindings
 test.bind('<Button-3>', corner)
 test.bind('<Double-Button-1>', exiter)
 test.bind('<Control-c>', load)
 test.bind('<Control-s>', save)
 
-
+#Start Window, and Key Listener
 with Listener(on_press=Press, on_release=Release) as l:
     Window.launch()
     l.join()
